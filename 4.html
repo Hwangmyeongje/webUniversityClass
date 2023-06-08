@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sejong University Search</title>
+    <style>
+        h1{
+            color: rgb(221, 49, 61);
+        }
+        body{
+            text-align: center;
+        }
+        a:hover{
+            color:red;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sejong University Search</h1>
+    <div id="now"></div>
+    <iframe id="map" width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><br/>
+    <p><a id="link1"></a></p>
+    <p><a id="link2"></a></p>
+    <p><a id="link3"></a></p>
+    <script>
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(success);
+        } 
+        else {
+            alert("Geolocation is not supported by your browser");
+        }
+        function success(position) {
+            let sejongLat = 37.5502;
+            let sejongLon = 127.0747;
+            let map = document.getElementById("map");
+            map.src = "https://www.openstreetmap.org/export/embed.html?bbox=" +
+            (parseFloat(sejongLon) - 0.01) + "%2C" + (parseFloat(sejongLat) - 0.01) + "%2C" +
+            (parseFloat(sejongLon) + 0.01) + "%2C" + (parseFloat(sejongLat) + 0.01);
+            let maplink = document.getElementById("link1");
+            let zoom = 15;
+            maplink.href = "https://www.openstreetmap.org/#map=" + zoom + "/" + sejongLat + "/" + sejongLon;
+            maplink.innerText = "Sejong University Location";
+
+            let link2 = document.getElementById("link2");
+            link2.href = "http://www.sejong.ac.kr/";
+            link2.innerText = "Sejong University Official Website";
+
+            let link3 = document.getElementById("link3");
+            link3.href = "https://www.instagram.com/sejong_univ/";
+            link3.innerText = "Sejong University instagram";
+        }
+</script>
+</body>
+</html>

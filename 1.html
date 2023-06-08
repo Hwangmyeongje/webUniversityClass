@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>music</title>
+     <style>
+        body {
+            background-color: rgb(80, 145, 220);
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            text-align: center;
+        }
+        
+        .container {
+            padding: 20px;
+            background-color: #ffffff;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .playlist {
+            list-style-type: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+        
+        .playlist li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        img{
+            max-width: 300px;
+        }
+      
+        </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Music Page</h1>
+        <p><img src="monkey.jpeg" alt="그림"></p>
+
+        <form>
+            <div class="form-group">
+                
+                <label for="genre">좋아하는 음악장르를 골라봐</label>
+                <label>
+                    <input type="radio" name="genre" value="pop"> Pop
+                </label>
+                <label>
+                    <input type="radio" name="genre" value="ballade"> ballade
+                </label>
+                <label>
+                    <input type="radio" name="genre" value="hip-hop"> Hip Hop
+                </label>
+            </div>
+            <div class="form-group">
+                <label>좋아하는 아티스트를 골라봐</label>
+                <div>
+                    <label>
+                        <input type="checkbox" name="artist" value="키드밀리"> 키드밀리
+                    </label>
+                    <label>
+                        <input type="checkbox" name="artist" value="애쉬 아일랜드"> 애쉬 아일랜드 
+                    </label>
+                    <label>
+                        <input type="checkbox" name="artist" value="박재범"> 박재범
+                    </label>
+                </div>
+            </div>
+        </form>
+        <h2>추천 Playlist</h2>
+        <ul class="playlist">
+            <li>
+                25 - 키드밀리  
+            </li>
+            <li>
+                WONDER - 애쉬 아일랜드
+            </li>
+            <li>Yesterday - 박재범</li>
+        </ul>
+</body>
+</html>

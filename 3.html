@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>가위바위보 게임</title>
+    <style>
+        body {
+            text-align: center;
+        }
+        button{
+            background-color: aquamarine;
+        }
+        #result{
+            color: rgb(83, 83, 187);
+        }
+    </style>
+</head>
+<body>
+    <h1>가위바위보</h1>
+    <p>선택해주세요: </p>
+    <button onclick="playGame('가위')">가위</button>
+    <button onclick="playGame('바위')">바위</button>
+    <button onclick="playGame('보')">보</button>
+    <p id="result"></p>
+
+    <script>
+        function playGame(playerChoice) {
+            const choices = ["바위", "보", "가위"];
+            const computerChoice = choices[Math.floor(Math.random() * choices.length)];
+
+            let result;
+            if (playerChoice === computerChoice) {
+                result = "비겼다";
+            } else if (
+                (playerChoice === "바위" && computerChoice === "가위") ||
+                (playerChoice === "보" && computerChoice === "바위") ||
+                (playerChoice === "가위" && computerChoice === "보")
+            ) {
+                result = "너가 이겼다";
+            } else {
+                result = "너 졌어 컴퓨터가 이겼다";
+            }
+            const resultText = `너는 ${playerChoice}를 냈고 컴퓨터는 ${computerChoice}를 냈어`;
+            const resultText2 = document.getElementById("result");
+            resultText2.innerHTML = resultText + "<br>" + result;
+        }
+    </script>
+</body>
+</html>
